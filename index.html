@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DevOps Lifecycle UML Diagram</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f9fafc;
+      margin: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    svg {
+      margin-top: 20px;
+    }
+    .stage {
+      fill: #4a90e2;
+      stroke: #333;
+      stroke-width: 2px;
+      rx: 15;
+      ry: 15;
+    }
+    .label {
+      fill: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+    .arrow {
+      stroke: #333;
+      stroke-width: 2px;
+      marker-end: url(#arrowhead);
+    }
+  </style>
+</head>
+<body>
+  <h1>DevOps Lifecycle (UML Diagram)</h1>
+  <svg width="1000" height="300">
+    <!-- Arrow Marker -->
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+              refX="10" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+      </marker>
+    </defs>
+
+    <!-- Stages -->
+    <rect x="50" y="100" width="100" height="50" class="stage"/>
+    <text x="100" y="125" class="label">Plan</text>
+
+    <rect x="180" y="100" width="100" height="50" class="stage"/>
+    <text x="230" y="125" class="label">Develop</text>
+
+    <rect x="310" y="100" width="100" height="50" class="stage"/>
+    <text x="360" y="125" class="label">Build</text>
+
+    <rect x="440" y="100" width="100" height="50" class="stage"/>
+    <text x="490" y="125" class="label">Test</text>
+
+    <rect x="570" y="100" width="100" height="50" class="stage"/>
+    <text x="620" y="125" class="label">Release</text>
+
+    <rect x="700" y="100" width="100" height="50" class="stage"/>
+    <text x="750" y="125" class="label">Deploy</text>
+
+    <rect x="830" y="100" width="100" height="50" class="stage"/>
+    <text x="880" y="125" class="label">Operate</text>
+
+    <rect x="460" y="200" width="100" height="50" class="stage"/>
+    <text x="510" y="225" class="label">Monitor</text>
+
+    <!-- Arrows -->
+    <line x1="150" y1="125" x2="180" y2="125" class="arrow"/>
+    <line x1="280" y1="125" x2="310" y2="125" class="arrow"/>
+    <line x1="410" y1="125" x2="440" y2="125" class="arrow"/>
+    <line x1="540" y1="125" x2="570" y2="125" class="arrow"/>
+    <line x1="670" y1="125" x2="700" y2="125" class="arrow"/>
+    <line x1="800" y1="125" x2="830" y2="125" class="arrow"/>
+    <line x1="880" y1="150" x2="510" y2="200" class="arrow"/> <!-- Operate -> Monitor -->
+    <line x1="510" y1="250" x2="100" y2="150" class="arrow"/> <!-- Monitor -> Plan -->
+  </svg>
+</body>
+</html>
